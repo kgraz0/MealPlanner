@@ -4,10 +4,17 @@ public class Item {
 	
 	String name;
 	int quantity;
+	String type;
 	
-	Item(String name, int quantity) {
+	Item (int quantity, String type) {
+		this.quantity = quantity;
+		this.type = type;
+	}
+	
+	Item(String name, int quantity, String type) {
 		this.name = name;
 		this.quantity = quantity;
+		this.type = type;
 	}
 
 	public String getName() {
@@ -26,9 +33,16 @@ public class Item {
 		this.quantity = quantity;
 	}
 
-	@Override
-	public String toString() {
-		return "Item [name=" + name + ", quantity=" + quantity + "]";
+	public String getType() {
+		return type;
 	}
 
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	@Override
+	public String toString() {
+		return "Item [name=" + name + ", quantity=" + quantity + ", type=" + type + "]";
+	}
 }
