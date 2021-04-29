@@ -41,30 +41,32 @@ public class Stock {
 			System.out.println(itemList.get(i));
 		}
 	}
-
-	public ArrayList<Item> getItemList() {
-		return itemList;
-	}
-
-	public void setItemList(ArrayList<Item> itemList) {
-		this.itemList = itemList;
-	}
 	
+	public boolean containsType(String type) {
+		for (int i = 0; i < itemList.size(); i++) {
+			if (itemList.get(i).getType().equals(type) && itemList.get(i).isPicked() == false) {
+				return true;
+			}
+		}
+		return false;
+	}
+
 	public Item pickItem(String type) {
-		
 		Random rand = new Random();
-		
 		int randNumber = rand.nextInt(itemList.size());
 		
+		found = false;
+		if (containsType(type) == true) {
 		while (found == false) {
 			if (itemList.get(randNumber).getType().equals(type)) {
 				found = true;
-				return itemList.get(randNumber);
+				itemList.get(randNumber).setPicked(true);
 			} else {
-				System.out.println("Not found.");
 				randNumber = rand.nextInt(itemList.size());
 			}
-			}
+			}} else {
+				System.out.println("This type does not exist!");
+		}
 		return itemList.get(randNumber);
 	}
 }
