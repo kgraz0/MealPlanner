@@ -1,6 +1,7 @@
 package mealPlanner;
 
 import java.io.FileNotFoundException;
+import java.util.Random;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -12,6 +13,7 @@ public class Stock {
 	
 	String fileDirectory;
 	ArrayList<Item> itemList = new ArrayList<Item>();
+	boolean found = false;
 	
 	public Stock (String fileDirectory) {
 		this.fileDirectory = fileDirectory;
@@ -38,5 +40,31 @@ public class Stock {
 		for (int i = 0; i < itemList.size(); i++) {
 			System.out.println(itemList.get(i));
 		}
+	}
+
+	public ArrayList<Item> getItemList() {
+		return itemList;
+	}
+
+	public void setItemList(ArrayList<Item> itemList) {
+		this.itemList = itemList;
+	}
+	
+	public Item pickItem(String type) {
+		
+		Random rand = new Random();
+		
+		int randNumber = rand.nextInt(itemList.size());
+		
+		while (found == false) {
+			if (itemList.get(randNumber).getType().equals(type)) {
+				found = true;
+				return itemList.get(randNumber);
+			} else {
+				System.out.println("Not found.");
+				randNumber = rand.nextInt(itemList.size());
+			}
+			}
+		return itemList.get(randNumber);
 	}
 }

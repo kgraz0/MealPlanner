@@ -13,8 +13,4 @@ public class BalancedDiet {
 	BalancedDiet(Stock stock) {
 		this.stock = stock;
 	}
-	
-	public void setupPlan() {
-		stock.getStock();
-	}
 }

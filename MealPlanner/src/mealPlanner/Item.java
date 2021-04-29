@@ -5,6 +5,7 @@ public class Item {
 	String name;
 	int quantity;
 	String type;
+	boolean picked;
 	
 	Item (int quantity, String type) {
 		this.quantity = quantity;
@@ -41,8 +42,16 @@ public class Item {
 		this.type = type;
 	}
 
+	public boolean isPicked() {
+		return picked;
+	}
+
+	public void setPicked(boolean picked) {
+		this.picked = picked;
+	}
+
 	@Override
 	public String toString() {
-		return "Item [name=" + name + ", quantity=" + quantity + ", type=" + type + "]";
+		return "Item [name=" + name + ", quantity=" + quantity + ", type=" + type + ", picked=" + picked + "]";
 	}
 }

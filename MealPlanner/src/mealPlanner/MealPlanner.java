@@ -9,6 +9,5 @@ public class MealPlanner {
 		//newStock.getStock();
 		
 		BalancedDiet newDiet = new BalancedDiet(newStock);
-		newDiet.setupPlan();
 	}
 }
