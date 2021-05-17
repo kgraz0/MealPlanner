@@ -10,6 +10,12 @@ public class MealPlanner {
 	}
 	
 	public static void createBalancedDiet(Stock stock) {
+	
+	    SQLDatabase newDB = new SQLDatabase();
+		
+	    newDB.connectDB();
+		
+		/*
 		Item fruit = stock.pickItem("Fruit");
 		Item grain = stock.pickItem("Grain");
 		Item protein = stock.pickItem("Protein");
@@ -17,7 +23,6 @@ public class MealPlanner {
 		Item vegetable = stock.pickItem("Vegetable");
 		Item fruit2 = stock.pickItem("Fruit");
 		Item fruit3 = stock.pickItem("Fruit");
-		//Item whatever = stock.pickItem("whatever");
 		
 		System.out.println(fruit);
 		System.out.println(grain);
@@ -27,5 +32,6 @@ public class MealPlanner {
 		System.out.println(fruit2);
 		System.out.println(fruit3);
 		//stock.getStock();
+		 */
 	}
 }
